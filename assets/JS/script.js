@@ -57,7 +57,8 @@ $("#5pm").children("input").val(localStorage.getItem("5pm"));
 //--onclick event to save user input to local storage---//
 $(".saveBtn").on("click", function() {
   var timeOfday = $(this).parent().attr("id");
-  var textContent = $("input").val().trim();
+  // var textContent = $("input").val().trim();
+  var textContent = $(this).parent().children().sibling("input").val().trim();
 
   localStorage.setItem(timeOfday, textContent);
   console.log(timeOfday, textContent);
